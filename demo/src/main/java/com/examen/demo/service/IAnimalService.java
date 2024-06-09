@@ -10,6 +10,7 @@ import java.util.List;
 public interface IAnimalService {
      //listar
      List<Animal> Get();
+    Animal FindAnimalById(Integer id);
     //guardar
      Animal Save(Animal entity);
     //actualizar  mascotas por id

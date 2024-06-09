@@ -37,6 +37,12 @@ public class AnimalController {
     }
 
 
+      @GetMapping("/buscar/{id}")
+      public Animal getAll(@PathVariable int id) {
+          return iAnimalService.FindAnimalById(id);
+      }
+
+
       @PutMapping("/actualizar/{id}")
       public ResponseEntity<Integer> updateAnimal(@PathVariable Integer id, @RequestBody Animal animal) {
           Integer updated = iAnimalService.update(id, animal);

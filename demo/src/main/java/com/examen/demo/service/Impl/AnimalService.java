@@ -26,7 +26,16 @@ public class AnimalService   implements IAnimalService {
         return _animalRepository.findAll();
     }
 
-    //post
+     @Override
+     public Animal FindAnimalById(Integer id) {
+         Optional<Animal> animal = _animalRepository.findById(id);
+         if (animal.isPresent())
+             return animal.get();
+         else
+             return new Animal();
+     }
+
+     //post
     @Override
     public Animal Save(Animal entity) {
         Animal guardarAnimal = _animalRepository.save(entity);
